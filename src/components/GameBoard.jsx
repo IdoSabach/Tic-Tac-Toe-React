@@ -1,20 +1,9 @@
 
 
-const gameBoard = [
-  [null , null , null],
-  [null , null , null],
-  [null , null , null],
-]
 
-export default function GameBoard( {currSelectPlayer , turns} ){
-  let gameBoardCurr = gameBoard
 
-  for(const turn of turns){
-    const {square , player} = turn ;
-    const {row , col} = square;
-
-    gameBoardCurr[row][col] = player;
-  }
+export default function GameBoard( {currSelectPlayer , board} ){
+  
 
   // const [currGameBoard , setCurrGameBoard] = useState(gameBoard)
 
@@ -30,12 +19,12 @@ export default function GameBoard( {currSelectPlayer , turns} ){
 
   return (
     <ol id="game-board">
-      {gameBoardCurr.map((row,rowIndex) => (
+      {board.map((row,rowIndex) => (
         <li key={rowIndex}>
           <ol>
             {row.map((playerSymbol , colIndex) => (
               <li key={colIndex}>
-                <button onClick={() => currSelectPlayer(rowIndex, colIndex)}>{playerSymbol}</button>
+                <button onClick={() => currSelectPlayer(rowIndex, colIndex)} disabled={playerSymbol !== null}>{playerSymbol}</button>
               </li>
             ))}
           </ol>
