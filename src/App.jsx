@@ -11,10 +11,6 @@ const gameBoard = [
   [null, null, null],
 ];
 
-function deriveGameBoard(){
-  
-}
-
 function deriveActivePlayer(gameTurn) {
   let currentPlayer = "X";
   if (gameTurn.length > 0 && gameTurn[0].player === "X") {
@@ -43,7 +39,6 @@ function App() {
     'O': 'Player 2'
   })
   const [gameTurn, setGameTurn] = useState([]);
-  // const [currPlayer, setCurrPlayer] = useState("X");
 
   let gameBoardCurr =[ ...gameBoard.map(arr => [...arr])];
 
@@ -59,7 +54,6 @@ function App() {
   const hasDraw = gameTurn.length === 9 && !winner
 
   function handlePlayer(rowIndex, colIndex) {
-    // setCurrPlayer((curr) => (curr === "X" ? "O" : "X"));
     setGameTurn((prevTurn) => {
       const currentPlayer = deriveActivePlayer(prevTurn);
       const updateTurn = [

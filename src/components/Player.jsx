@@ -16,13 +16,11 @@ export default function Player({ name, symbol, isActive, onChangeName }) {
   }
 
   let playerName = <span className="player-name"> {isName} </span>;
-  // let btn = "Edit";
 
   if (isEdit) {
     playerName = (
       <input type="text" required value={isName} onChange={handelChange} />
     );
-    // btn = "Save";
   }
 
   return (
