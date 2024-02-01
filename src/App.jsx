@@ -97,6 +97,16 @@ function App() {
         <GameBoard currSelectPlayer={handlePlayer} board={gameBoardCurr} />
       </div>
       <Log turns={gameTurn} />
+
+      {/* <footer id="footer">
+        <div>Build by Ido Sabach <button><a href=""></a></button></div>
+      </footer>
+      <footer id="footer">
+        <div>Build by Ido Sabach <button><a href=""></a></button></div>
+      </footer>
+      <footer id="footer">
+        <div>Build by Ido Sabach <button><a href=""></a></button></div>
+      </footer> */}
     </main>
   );
 }
